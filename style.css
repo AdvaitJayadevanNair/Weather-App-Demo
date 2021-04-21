@@ -27,109 +27,72 @@ body {
 #background {
     width: 100%;
     height: 100%;
-    background-size: cover;
     background-color: var(--background);
-    background-repeat: no-repeat;
 }
-/*set container class to full size with 25px padding and position absolute so it will be above #background*/
+/*set container class to full size with position absolute so it will be above #background*/
 .container {
-    width: 100%;
-    height: 100%;
-    padding: 25px;
-    position: absolute;
-    top: 0;
+    
 }
 
 .top-left {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    
 }
 
 .top-right {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    
 }
 
 .bottom-left {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
+    
 }
 
 .bottom-right {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
+    
 }
 
 /*define text sizes*/
 h1 {
-    font-size: 120px;
-    cursor: pointer;
+    
 }
 
 h2 {
-    font-size: 60px;
+    
 }
 
 p {
-    font-size: 30px;
+    
 }
 
 a {
-    font-size: 30px;
-    color: var(--accent);
-    text-decoration: none;
+    
 }
 
 span {
-    color: var(--accent);
+    
 }
 
 .material-icons-round {
-    font-size: 48px;
+    
 }
 
 /*button styling*/
 button {
-    background: none;
-    border: none;
-    outline: none;
-    font-family: 'Quicksand', sans-serif;
-    cursor: pointer;
-    font-size: inherit;
-    font-weight: inherit;
+    
 }
 
 button:hover {
-    opacity: .6;
+    
 }
 
 button:disabled > * {
-    color: var(--disable);
+    
 }
 
 /*input stying*/
 input {
-    outline: none;
-    border: 3px solid var(--accent);
-    border-radius: 24px;
-    width: 270px;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.6);
-    color: var(--font);
-    font-size: 30px;
-    padding: 12px 30px;
+    
 }
 
 input::placeholder {
-    color: var(--font);
+    
 }
