@@ -5,30 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
+    <!-- get fonts and icons from Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- connects style.css file -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- make div to show image -->
     <div id="background"></div>
 
+    <!-- make div to contain all other divs and to size properly -->
     <div class="container">
+        <!-- div to show zipcode input and submit buttons -->
         <div class="top-left">
             <input id="zipcode" type="text" placeholder="Zip Code" />
             <button id="submit"><span class="material-icons-round">east</span></button>
         </div>
+        <!-- div to show last weather update from server -->
         <div class="top-right">
             <button id="refresh"><span class="material-icons-round">autorenew</span></button>
             <p id="time"></p>
         </div>
+        <!-- div to show temperature, weather and location -->
         <div class="bottom-left">
             <h1 id="temperature"></h1>
             <p id="weather"></p>
             <h2 id="place"></h2>
         </div>
+        <!-- div to show sunrise, sunset and zip code with link to Google maps -->
         <div class="bottom-right">
             <p id="sunrise"></p>
             <p id="sunset"></p>
@@ -36,6 +44,7 @@
         </div>
     </div>
 
+    <!-- connects app.js file -->
     <script src="app.js"></script>
 </body>
 
