@@ -131,10 +131,10 @@ function displayWeather() {
 //function to fetch Image from name of location returned from the Weather API
 function fetchUnsplash() {
 	//check if weather is defined or return
-	if (!weather) return;
+	if (!weatherData) return;
 	//make a call to image api using fetch method with location name and Photo API key
 	fetch(
-		`https://api.unsplash.com/search/photos?client_id=${UNSPLASHKEY}&query=${weather.name}&per_page=10`
+		`https://api.unsplash.com/search/photos?client_id=${UNSPLASHKEY}&query=${weatherData.name}&per_page=10`
 	).then(async (response) => {
 		//check if api responed correctly or return
 		if (!response.ok) {
