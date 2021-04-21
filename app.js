@@ -1,5 +1,5 @@
-const UNSPLASHKEY = "DkVRmsRH9Ekfw0PwmprKEeXmc7e47xVrw4PkF6efTnE";
-const OPENWEATHERKEY = "af09487e0155065ded4c91f22bbad931";
+const UNSPLASHKEY = "";
+const OPENWEATHERKEY = "";
 
 
 //Select all needed elements on page
@@ -21,33 +21,33 @@ let isFarienheit = true;
 let weatherData = {};
 
 //call weather API on page load
-fetchWeather();
+
 
 //Define what happens when submit button is clicked
 submit.onclick = function () {
 	//An regex check to see if user's zipcode is valid 
 	if (/^(\d{5}(?:\-\d{4})?)$/g.test(zipcode.value)) {
 		//set zipCode to user enterd zipcode
-		zipCode = zipcode.value;
+		
 		//clear inputfield afterwards
-		zipcode.value = "";
+		
 		//call weather API
-		fetchWeather();
+		
 	}
 };
 
 //Define what happens when refresh button is clicked
 refresh.onclick = function () {
 	//weather API is called
-	fetchWeather();
+	
 };
 
 //Define what happens when the temperature is clicked
 temperature.onclick = function () {
 	//change isFarienheit to opposite it self
-	isFarienheit = !isFarienheit;
+	
 	//call displayWeather to update screen
-	displayWeather();
+	
 };
 
 //function to convert farienheit to celsius and return it
@@ -83,8 +83,7 @@ function getFormatedDayTime(date) {
 //function to fetch Image from name of location returned from the Weather API
 function fetchWeather() {
 	//disable buttons so server won't be called multiple times 
-	submit.disabled = true;
-	refresh.disabled = true;
+	
 
 	//make a call to weather api using fetch method with zipcode and weather API key
 	fetch(
@@ -93,20 +92,18 @@ function fetchWeather() {
 		//check if api responed correctly or return
 		if (!response.ok) {
 			//renable buttons so server won't be called multiple times 
-			submit.disabled = false;
-			refresh.disabled = false;
+			
 			return;
 		}
 		//set weatherData to server response in JSON object format
 		weatherData = await response.json();
 		//call fetchUnsplash to update background image
-		fetchUnsplash();
+		
 		//call displayWeather to show new weather
-		displayWeather();
+		
 		
 		//renable buttons so server won't be called multiple times 
-		submit.disabled = false;
-		refresh.disabled = false;
+		
 	});
 }
 
@@ -131,10 +128,10 @@ function displayWeather() {
 //function to fetch Image from name of location returned from the Weather API
 function fetchUnsplash() {
 	//check if weather is defined or return
-	if (!weather) return;
+	if (!weatherData) return;
 	//make a call to image api using fetch method with location name and Photo API key
 	fetch(
-		`https://api.unsplash.com/search/photos?client_id=${UNSPLASHKEY}&query=${weather.name}&per_page=10`
+		`https://api.unsplash.com/search/photos?client_id=${UNSPLASHKEY}&query=${weatherData.name}&per_page=10`
 	).then(async (response) => {
 		//check if api responed correctly or return
 		if (!response.ok) {
@@ -143,10 +140,8 @@ function fetchUnsplash() {
 		//change response into JSON object
 		let data = await response.json();
 		//choose random photo from the returned array of photos
-		let random = Math.floor(Math.random() * data.results.length);
+		
 		//set background as random photo
-		background.style.background = `url("${data.results[random].urls.full}")`;
-		background.style.backgroundSize = "cover";
-		background.style.repeat = "no-repeat";
+		
 	});
 }
